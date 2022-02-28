@@ -24,7 +24,15 @@ Research productivity is known as a time consuming, expensive path, which most o
 
 ## Drug repurposing
 
-Drug repurposing consist in identifying new targets for known drugs. Among other advantages, it is demonstrated to reduce R&D costs, decrease drug development timeline and makes clinical trials easier. Making clinical tries easier is one of the main paths of improvement, since it requires testing medical approaches in people.
+Drug repurposing consist in identifying new targets for known drugs. In this regards, using an existing drug can save a lot of steps in drug discovery and development proccess.
+
+Among other advantages, it is demonstrated to:
+
+* Reduce R&D costs
+* Decrease drug development timeline
+* Make clinical trials easier. 
+ 
+Making clinical tries easier is one of the main paths of improvement, since it requires testing medical approaches in people. An offline evaluation, since this project, allows researchers in a medical environment to predict future preferences, which could potentially reduce needed testing in both people and animals.
 
 ![image](https://user-images.githubusercontent.com/93614965/156045867-7a12a014-0a6b-4a78-96ed-c8418d47d5a8.png)
 
@@ -32,10 +40,12 @@ Drug repurposing consist in identifying new targets for known drugs. Among other
 # Project Goals
 
 * Apply what we learn in the post-graduate program in the medicine field
-* Build two recommender systems for drug candidates offline evaluation (allow researchers in a medical environment to predict future preferences):
+* Build two recommender systems for drug candidates:
 
-  *   **Protein-drug recommender**: Potential use to link a target selected for a specific disease to an existing drug.
-  *   **Drug-disease recommender**: envisioned in the field of drug repurposing or drug reposisioning.
+  *   **Protein-drug recommender**: Potential use to link a known target selected (first step in drug discovery process) for a specific disease to an existing drug.
+  *   **Drug-disease recommender**: envisioned in the field of drug repurposing or drug reposisioning (exploring the use of drugs already in place to treat other diseases).
+
+
 
 
   
