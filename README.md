@@ -61,8 +61,6 @@ Among other advantages, it is demonstrated to:
  
 Making clinical tries easier is one of the main paths of improvement, since it requires testing medical approaches in people. An offline evaluation, since this project, allows researchers in a medical environment to predict future preferences, which could potentially reduce needed testing in both people and animals.
 
-![image](https://user-images.githubusercontent.com/93614965/156045867-7a12a014-0a6b-4a78-96ed-c8418d47d5a8.png)
-
 
 
 # Project Goals
