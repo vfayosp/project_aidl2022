@@ -37,7 +37,6 @@ class Dataset(torch.utils.data.Dataset):
         )
 
         if num_negatives_test is None:
-
             self.test_neg = self.test_data.append(self.data)["disease"].nunique()
         else:
             self.test_neg = num_negatives_test
