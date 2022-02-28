@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import pandas as pd
 import numpy as np
 import scipy.sparse as sp
@@ -30,17 +29,22 @@ class Dataset(torch.utils.data.Dataset):
             os.path.join(data_path, "df_train_" + type_data + ".csv"),
             sep="\t",
             index_col="Unnamed: 0",
-        ).to_numpy()
+        )
         self.test_data = pd.read_csv(
             os.path.join(data_path, "df_test_" + type_data + ".csv"),
             sep="\t",
             index_col="Unnamed: 0",
-        ).to_numpy()
+        )
 
         if num_negatives_test is None:
+
             self.test_neg = self.test_data.append(self.data)["disease"].nunique()
         else:
             self.test_neg = num_negatives_test
+
+        self.data = self.data.to_numpy()
+        self.test_data = self.test_data.to_numpy()
+
         self.nitems = self.test_data.shape[0]
 
         self.items = self.data[:, :-1]

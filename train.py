@@ -1,8 +1,8 @@
-import utils
 import torch
 import torch.utils.data
 import wandb
 from statistics import mean
+from utils import getHitRatio, getNDCG, save_model
 
 
 def train_one_epoch(model, optimizer, data_loader, criterion, device):
@@ -36,8 +36,8 @@ def test(model, full_dataset, device, topk):
         _, indices = torch.topk(predictions, topk)
         indices = indices.cpu().detach().numpy()
         recommend_list = user_test[indices][:, 1]
-        HR.append(utils.getHitRatio(recommend_list, gt_item))
-        NDCG.append(utils.getNDCG(recommend_list, gt_item))
+        HR.append(getHitRatio(recommend_list, gt_item))
+        NDCG.append(getNDCG(recommend_list, gt_item))
     return mean(HR), mean(NDCG)
 
 
@@ -49,7 +49,8 @@ def train_epochs(
     criterion,
     device,
     topk,
-    tb_model,
+    model_name,
+    writer,
     epochs=150,
 ):
     for epoch_i in range(epochs):
@@ -70,4 +71,7 @@ def train_epochs(
         }
 
         wandb.log(dict)
-        tb_model.add_scalar_dict(dict, epoch_i)
+        writer.add_scalar_dict(dict, epoch_i)
+        save_model(model, f"{model_name}_checkpoint_{epoch_i}.model")
+
+    return model

@@ -1,17 +1,31 @@
 import argparse
 import os
 import torch.nn
-from FM_GCN_model import FactorizationMachineModel_withGCN
+import torch.optim
+import wandb
 
+from torch_geometric.utils import from_scipy_sparse_matrix
+from FM_GCN_model import (
+    FactorizationMachineModel_withGCN,
+    sparse_mx_to_torch_sparse_tensor,
+)
+from scipy.sparse import identity
 from data_import import Dataset
 from torch.utils.data import DataLoader
 from train import train_epochs
 from FM_model import FactorizationMachineModel
-from utils import SummaryWriter
+from utils import SummaryWriter, save_model
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
+    "--model", help="choose model(FM;FM_GCN;FM_GCNwAT)", type=str, default="FM"
+)
+parser.add_argument(
     "--log_dir", help="tensorboard log directory", type=str, default="runs"
+)
+parser.add_argument("--wandb_run", help="WandB run name", type=str, default="runs")
+parser.add_argument(
+    "--wandb_project", help="WandB project", type=str, default="project"
 )
 parser.add_argument("--topk", help="topk values to retrieve", type=int, default=10)
 parser.add_argument(
@@ -20,37 +34,68 @@ parser.add_argument(
     type=str,
     default="drug_disease",
 )
-parser.add_argument("--n_outputs", help="amount of outputs", type=int, default=10)
-parser.add_argument("--epochs", help="number of epochs to train", type=int, default=5)
-parser.add_argument("--batch_size", help="batch size", type=int, default=100)
-parser.add_argument("--lr", help="learning rate", type=float, default=0.1)
+parser.add_argument(
+    "--embed_dims", help="amount of embedding dimensions", type=int, default=32
+)
+parser.add_argument("--epochs", help="number of epochs to train", type=int, default=150)
+parser.add_argument("--batch_size", help="batch size", type=int, default=256)
+parser.add_argument("--lr", help="learning rate", type=float, default=0.01)
 args = parser.parse_args()
 
 if not torch.cuda.is_available():
     raise Exception("You should enable GPU runtime")
 device = torch.device("cuda")
 
-logs_base_dir = args["log_dir"]
+logs_base_dir = args.log_dir
 os.makedirs(logs_base_dir, exist_ok=True)
+wandb.init(project=args.wandb_project)
+wandb.run.name = args.wandb_run
+dataset = Dataset(type_data=args.dataset)
 
-dataset = Dataset(type_data=args["dataset"])
 criterion = torch.nn.BCEWithLogitsLoss(reduction="mean")
 
-data_loader = DataLoader(dataset, batch_size=256, shuffle=True, num_workers=0)
-
-model = FactorizationMachineModel(dataset.field_dims[-1], 32).to(device)
-optimizer = torch.optim.Adam(params=model.parameters(), lr=0.001)
-
-tb_fm = SummaryWriter(log_dir=f"{logs_base_dir}/{logs_base_dir}_FM/")
-
-train_epochs(
-    model,
-    optimizer,
-    data_loader,
-    dataset,
-    criterion,
-    device,
-    args["topk"],
-    tb_fm,
-    epochs=150,
+data_loader = DataLoader(
+    dataset, batch_size=args.batch_size, shuffle=True, num_workers=0
 )
+
+if args.model == "FM":
+    model = FactorizationMachineModel(
+        dataset.field_dims[-1], embed_dim=args.embed_dims
+    ).to(device)
+elif args.model in ["FM_GCN", "FM_GCNwAT"]:
+    X = sparse_mx_to_torch_sparse_tensor(identity(dataset.train_mat.shape[0]))
+    edge_idx, edge_attr = from_scipy_sparse_matrix(dataset.train_mat)
+    model_gcn = FactorizationMachineModel_withGCN(
+        dataset.field_dims[-1],
+        args.embed_dims,
+        X.to(device),
+        edge_idx.to(device),
+        attention=args.model == "FM_GCNwAT",
+    ).to(device)
+else:
+    raise Exception(
+        "Wrong model provided. Available models are: FM, FM_GCN or FM_GCNwAT"
+    )
+
+optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr)
+
+writer = SummaryWriter(log_dir=f"{logs_base_dir}/{logs_base_dir}_{args.model}")
+
+if __name__ == "__main__":
+
+    print(f"Starting {args.model} trainning.\n")
+
+    model = train_epochs(
+        model,
+        optimizer,
+        data_loader,
+        dataset,
+        criterion,
+        device,
+        args.topk,
+        args.model,
+        writer,
+        epochs=args.epochs,
+    )
+
+    save_model(model, args["model"] + ".model")

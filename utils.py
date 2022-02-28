@@ -1,5 +1,6 @@
 import math
 import os
+import torch
 import numpy as np
 from torch.utils.tensorboard import SummaryWriter
 
@@ -28,3 +29,7 @@ def getNDCG(recommend_list, gt_item):
         return math.log(2) / math.log(idx + 2)
     else:
         return 0
+
+
+def save_model(model, path):
+    torch.save(model.state_dict(), path)
