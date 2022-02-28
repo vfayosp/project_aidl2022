@@ -24,7 +24,7 @@ Research productivity is known as a time consuming, expensive path, which most o
 
 ## Drug repurposing
 
-Drug repurposing consist in identifying new targets for known drugs. In this regards, using an existing drug can save a lot of steps in drug discovery and development proccess.
+Drug repurposing consist on identifying new targets for known drugs. In this regards, using an existing drug can save a lot of steps in drug discovery and development proccess.
 
 Among other advantages, it is demonstrated to:
 
