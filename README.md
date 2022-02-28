@@ -1,3 +1,5 @@
+ejemplo: https://github.com/S-parera/RL-chess_aidl/blob/main/README.md
+
 # Drug recommender system 
 Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
 
