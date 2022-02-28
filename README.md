@@ -12,6 +12,8 @@ Pytorch
 
 # Introduction and motivation
 
+## Drug discovery
+
 Drug discovery is the process of identifying  potencial new medicines. This process start with **target identification and validation**, after that, several clinical studies and clinical developments are performed before it is registrated and obtains the approval to be released.
 
 ![image](https://user-images.githubusercontent.com/93614965/156042866-4300912b-a0b0-48b0-8f6d-fb837f6dc7be.png)
@@ -20,7 +22,11 @@ Drug discovery is the process of identifying  potencial new medicines. This proc
 
 Research productivity is known as a time consuming, expensive path, which most of the times end up with very low sucess drug candidates. On this basis, recommender systems have the potential to become useful tools for this process. There are already existing studies applying it to side effects, drug-drug interaction and drug **repurposing**
 
+## Drug repurposing
 
+Drug repurposing consist in identifying new targets for known drugs. Among other advantages, it is demonstrated to reduce R&D costs, decrease drug development timeline and makes clinical trials easier. Making clinical tries easier is one of the main paths of improvement, since it requires testing medical approaches in people.
+
+![image](https://user-images.githubusercontent.com/93614965/156045867-7a12a014-0a6b-4a78-96ed-c8418d47d5a8.png)
 
 
 # Project Goals
