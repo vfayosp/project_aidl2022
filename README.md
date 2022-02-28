@@ -16,7 +16,7 @@ Pytorch
 
 A recommendation system is a information filtering system that helps to predict the "preference" between and user and an item. This is used in a wide variety of areas mainly  including music, films, books and products. 
 
-From an user-product point of  view, recommender system are usually based on :
+From an user-product point of  view (which is the widely used approach) , recommender system are usually based on :
 
 * **Collaborative** filtering: Builds a model based on user behavior and interactions as well as similar decissions of other users.
 * **Content-based** filtering: Uses the characteristics of the item itself to find similar properties between items and recommender them.
@@ -77,8 +77,17 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 # Recommender system models:
 
+https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
+
+https://towardsdatascience.com/introduction-to-recommender-systems-2-deep-neural-network-based-recommendation-systems-4e4484e64746
+
+https://stats.stackexchange.com/questions/108901/difference-between-factorization-machines-and-matrix-factorization
+
 ## Factorization machines
 
+Factorization Machines (FM) are generic supervised learning models that map arbitrary real-valued features into a low-dimensional latent factor space [2]. FM models represent user-item interactions as tuples of real-valued feature vectors and numeric target variables (similar to a regression or classification models). The base features will be binary vectors of user and item indicators, such that each training sample has exactly two non-zero entries corresponding to the given user/item combination.
+
+![image](https://user-images.githubusercontent.com/93614965/156051487-d82a03fd-c020-46fc-890d-6dff592614ac.png)
 
 
 ## Factorization machines with GCN
@@ -97,5 +106,7 @@ Citation
 [1] https://www.researchgate.net/figure/Schematic-representation-of-the-drug-discovery-process-The-two-main-phases-discovery_fig2_335215729
 
 [2] https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
+
+
 
 Luo, Y., Zhao, X., Zhou, J., Yang, J., Zhang, Y., Kuang, W., Peng, J., Chen, L. & Zeng, J. A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information. Nature Communications 8, (2017).
