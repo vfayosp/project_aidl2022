@@ -1,9 +1,10 @@
 numpy==1.22.2
 pandas==1.4.1
 scipy==1.8.0
-torch==1.10.2
+torch==1.10.0+cu113
 torch_geometric==2.0.3
 tqdm==4.63.0
 wandb==0.12.11
+tensorboard
 #!pip install -q torch-scatter -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
 #!pip install -q torch-sparse -f https://data.pyg.org/whl/torch-1.10.0+cu113.html
