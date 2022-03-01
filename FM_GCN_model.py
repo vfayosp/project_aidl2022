@@ -27,7 +27,7 @@ class GraphModel(torch.nn.Module):
         self.A = train_mat
         self.features = features
         if attention:
-            self.GCN_module = GATConv(int(field_dims), embed_dim, heads=2, dropout=0.6)
+            self.GCN_module = GATConv(int(field_dims), embed_dim, heads=8, dropout=0.6)
         else:
             self.GCN_module = GCNConv(field_dims, embed_dim)
 
