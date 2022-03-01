@@ -65,7 +65,7 @@ if args.model == "FM":
 elif args.model in ["FM_GCN", "FM_GCNwAT"]:
     X = sparse_mx_to_torch_sparse_tensor(identity(dataset.train_mat.shape[0]))
     edge_idx, edge_attr = from_scipy_sparse_matrix(dataset.train_mat)
-    model_gcn = FactorizationMachineModel_withGCN(
+    model = FactorizationMachineModel_withGCN(
         dataset.field_dims[-1],
         args.embed_dims,
         X.to(device),
@@ -98,4 +98,4 @@ if __name__ == "__main__":
         epochs=args.epochs,
     )
 
-    save_model(model, args["model"] + ".model")
+    save_model(model, args.model + ".model")
