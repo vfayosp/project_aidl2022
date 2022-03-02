@@ -75,7 +75,11 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 ## Environment setup
 
+## Experiment setup
+
 **To be explained**
+
+# Datasets
 
 # Recommender system models:
 
@@ -98,8 +102,7 @@ Factorization Machines (FM) are generic supervised learning models that map arbi
 
   
 
-
-
+# Results
 
 
 
