@@ -75,6 +75,8 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 ## Environment setup
 
+piedra
+
 ## Experiment setup
 
 **To be explained**
