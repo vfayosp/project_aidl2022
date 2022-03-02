@@ -113,8 +113,17 @@ Factorization machines only incorporate secon-order interactions between feature
 
 # Metrics, evaluations
 
-* Hit ratio: Is is simply the number of correct items that were present in the recommendation list (of lenght TopK). If the topk is increased the hit ratio increases, but it must be a reasonable value.
-* NDCG
+* **Hit ratio**: Is is simply the number of correct items that were present in the recommendation list (of lenght TopK). If the topk is increased the hit ratio increases, but it must be a reasonable value.
+* **NDCG** (Normalized Discounted Cumulative Gain) :
+
+The cumulative gain is sthe sum of gains up to the K position in the recommendation list but does not take into account the order. To penalize the gain by its rank, the DCG is introduced, being IDCG the score for the most ideal ranking.
+
+![image](https://user-images.githubusercontent.com/93614965/156443858-3d50d206-c5f9-4b76-b6b7-a5c30bd22243.png)
+
+Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
+
+![image](https://user-images.githubusercontent.com/93614965/156443885-32be2840-b528-49a2-b5c1-f88740ffb243.png)
+
 
 # Results
 
