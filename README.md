@@ -96,8 +96,11 @@ Factorization Machines (FM) are generic supervised learning models that map arbi
 ![image](https://user-images.githubusercontent.com/93614965/156051487-d82a03fd-c020-46fc-890d-6dff592614ac.png)
 
 
+
 ## Factorization machines with GCN
-hola
+Factorization machines assume that each sample is independent and cannot exploit interactions between samples, it is only focused on the features. However, in some applications the interaction between samples is also useful.  
+
+Graph Convolutional Networks (GCN) allow to capture the correlation between nodes by useing a convolution operation. This is performed by agreggating information from the neighbors' information when making predictios so the interaction between nodes is also encoded.
 
 ## Factorization machines with GCN (with an attention layer)
 
