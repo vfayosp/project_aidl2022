@@ -75,8 +75,6 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 ## Environment setup
 
-piedra
-
 ## Experiment setup
 
 **To be explained**
@@ -99,6 +97,7 @@ Factorization Machines (FM) are generic supervised learning models that map arbi
 
 
 ## Factorization machines with GCN
+hola
 
 ## Factorization machines with GCN (with an attention layer)
 
