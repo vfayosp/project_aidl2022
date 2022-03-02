@@ -46,7 +46,7 @@ class Dataset(torch.utils.data.Dataset):
 
         self.nitems = self.test_data.shape[0]
 
-        self.items = self.data[:, :-1]
+        self.items = self.preprocess_items(self.data)
         self.targets = self.data[:, 2]
 
         self.field_dims = np.max(self.items, axis=0) + 1
@@ -55,7 +55,7 @@ class Dataset(torch.utils.data.Dataset):
         self.negative_sampling(num_negatives=num_negatives_train)
 
         self.test_set = self.build_test_set(
-            self.test_data[:, :-1], num_neg_samples_test=self.test_neg
+            self.preprocess_items(self.test_data), num_neg_samples_test=self.test_neg
         )
 
     def __len__(self):
