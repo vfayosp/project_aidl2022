@@ -113,6 +113,9 @@ Factorization machines only incorporate secon-order interactions between feature
 
 # Metrics, evaluations
 
+* Hit ratio: Is is simply the number of correct items that were present in the recommendation list (of lenght TopK). If the topk is increased the hit ratio increases, but it must be a reasonable value.
+* NDCG
+
 # Results
 
 
