@@ -1,5 +1,11 @@
 ejemplo: https://github.com/S-parera/RL-chess_aidl/blob/main/README.md
 
+# Installation
+To install and run de project the use Miniconda 3 is advised: 
+````
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+````
+
 # Drug recommender system 
 Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
 
