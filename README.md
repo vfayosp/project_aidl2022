@@ -27,11 +27,15 @@ git clone https://github.com/vfayosp/project_aidl2022.git
 The project follows this structure:
 ````
 .
-├── data                   # data used for training
-├── trained_models         # Trained models ready to predict
-├── utils                  # Auxiliar data ready to predict
-├── main.py
-├── requeriments.txt
+├── data                             # data used for training
+    ├── ...
+    ├── df_train_drug.disease.csv    # sample data used for train
+    ├── df_test_drug.disease.csv     # sample data used for test
+    └── ...
+├── trained_models                   # Trained models ready to predict
+├── utils                            # Auxiliar functions used by the main
+├── main.py                          # Main program
+├── requeriments.txt                 # Requirements file
 ├── LICENSE
 └── README.md
 ````
