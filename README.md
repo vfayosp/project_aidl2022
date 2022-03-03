@@ -91,7 +91,10 @@ Then we have two dataframes for each interaction matrix, splitting into the corr
 
 - `df_train_variable1_variable2.csv` 
 - `df_test_variable1_variable2.csv` 
-- 
+
+Train and test dataframes have been generated with the *random split* approach [5]. This is based on a selecting only one random item of each user for testing.
+Although this scheme has been changed to use the last interaction (from time point of view, leave one last item). However, our dataset and the approach of our analysis do not allow for a the temporal approach.
+
 # Recommender system models:
 
 https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
@@ -151,5 +154,7 @@ Learning the Weight of Feature Interactions via Attention Networks∗
 
 [4] DEEP RELATIONAL FACTORIZATION MACHINES
 
+[5] Exploring Data Splitting Strategies for the Evaluation
+of Recommendation Models
 
 Luo, Y., Zhao, X., Zhou, J., Yang, J., Zhang, Y., Kuang, W., Peng, J., Chen, L. & Zeng, J. A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information. Nature Communications 8, (2017).
