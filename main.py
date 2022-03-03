@@ -5,16 +5,16 @@ import torch.optim
 import wandb
 
 from torch_geometric.utils import from_scipy_sparse_matrix
-from FM_GCN_model import (
+from utils.FM_GCN_model import (
     FactorizationMachineModel_withGCN,
     sparse_mx_to_torch_sparse_tensor,
 )
 from scipy.sparse import identity
-from data_import import Dataset
+from utils.data_import import Dataset
 from torch.utils.data import DataLoader
-from train import train_epochs
-from FM_model import FactorizationMachineModel
-from utils import SummaryWriter, save_model
+from utils.train import train_epochs
+from utils.FM_model import FactorizationMachineModel
+from utils.side import SummaryWriter, save_model
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
