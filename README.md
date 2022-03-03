@@ -81,6 +81,14 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 # Datasets
 
+data/directory contains the following datasets:
+
+mat_protein_protein.txt : Protein-Protein interaction matrix
+mat_protein_drug.txt : Protein-Drug interaction matrix
+mat_drug_protein.txt : Drug_Protein interaction matrix (transpose of the above matrix)
+mat_drug_disease.txt : Drug-Disease association matrix
+
+
 # Recommender system models:
 
 https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
