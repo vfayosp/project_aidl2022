@@ -82,9 +82,8 @@ Example:
  · Batch size = 64			
  · Number of epochs = 22
  . TopK
- . 
+ . Embed dimms: 32
 
-## Experiment setup
 
 **To be explained**
 
@@ -126,7 +125,7 @@ FM models represent user-item interactions as tuples of real-valued feature vect
 
 Factorization machines assume that each sample is independent and cannot exploit interactions between samples, it is only focused on the features. However, in some applications the interaction between samples is also useful, as in recommendation systems.  
 
-Graph Convolutional Networks (GCN) allow to capture the correlation between nodes by useing a convolution operation. This is performed by agreggating information from the neighbors' information when making predictios so the interaction between nodes is also encoded.
+Graph Convolutional Networks (GCN) allow to capture the correlation between nodes by using a convolution operation. This is performed by agreggating information from the neighbors' information when making predictios so the interaction between nodes is also encoded.
 
 ## Factorization machines with GCN (with an attention layer)
 
@@ -146,6 +145,21 @@ The cumulative gain is sthe sum of gains up to the K position in the recommendat
 Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
 
 ![image](https://user-images.githubusercontent.com/93614965/156443885-32be2840-b528-49a2-b5c1-f88740ffb243.png)
+
+
+# Experiment setup, model approaches and results.
+
+## Protein-drug
+
+The models explained above where applied to the Protein-Drug dataset to buld up a recommender system able to recommend drugs starting from a target.
+
+* First aproach: Factorization machines model computing embeddings just as a linear layer.
+* Second approach: Factorization machines computing embedings with GCN, to take advantage of the interaction between nodes.
+* Finally, in order to capture interaction higher than second order, the attention layer was applied.
+
+The attention layer did not show major improvements. The obtained results are showed below:
+
+
 
 
 # Results
