@@ -105,12 +105,6 @@ Although this scheme has been changed to use the last interaction (from time poi
 
 # Recommender system models:
 
-https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
-
-https://towardsdatascience.com/introduction-to-recommender-systems-2-deep-neural-network-based-recommendation-systems-4e4484e64746
-
-https://stats.stackexchange.com/questions/108901/difference-between-factorization-machines-and-matrix-factorization
-
 ## Factorization machines
 
 Factorization Machines (FM) are generic supervised learning models that map arbitrary real-valued features into a low-dimensional latent factor space [2]. It enhances the linear regresion model by incorporating the second-order feature interactions.
@@ -192,3 +186,9 @@ Learning the Weight of Feature Interactions via Attention Networks∗
 of Recommendation Models
 
 Luo, Y., Zhao, X., Zhou, J., Yang, J., Zhang, Y., Kuang, W., Peng, J., Chen, L. & Zeng, J. A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information. Nature Communications 8, (2017).
+
+https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
+
+https://towardsdatascience.com/introduction-to-recommender-systems-2-deep-neural-network-based-recommendation-systems-4e4484e64746
+
+https://stats.stackexchange.com/questions/108901/difference-between-factorization-machines-and-matrix-factorization
