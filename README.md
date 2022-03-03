@@ -83,11 +83,17 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 data/directory contains the following datasets:
 
-mat_protein_protein.txt : Protein-Protein interaction matrix
-mat_protein_drug.txt : Protein-Drug interaction matrix
-mat_drug_protein.txt : Drug_Protein interaction matrix (transpose of the above matrix)
-mat_drug_disease.txt : Drug-Disease association matrix
+- `mat_protein_drug.txt` 	: Protein-Drug interaction matrix
+- `mat_drug_protein.txt` 	: Drug_Protein interaction matrix (transpose of the above matrix)
+- `mat_drug_disease.txt` 	: Drug-Disease association matrix
 
+Then we have two dataframes for each interaction matrix, splitting into the corresponding trains and test datasets.
+
+- `df_train_variable1_variable2.csv` 
+- `df_test_variable1_variable2.csv` 
+
+Train and test dataframes have been generated with the *random split* approach [5]. This is based on a selecting only one random item of each user for testing.
+Although this scheme has been changed to use the last interaction (from time point of view, leave one last item). However, our dataset and the approach of our analysis do not allow for a the temporal approach.
 
 # Recommender system models:
 
@@ -148,5 +154,7 @@ Learning the Weight of Feature Interactions via Attention Networks∗
 
 [4] DEEP RELATIONAL FACTORIZATION MACHINES
 
+[5] Exploring Data Splitting Strategies for the Evaluation
+of Recommendation Models
 
 Luo, Y., Zhao, X., Zhou, J., Yang, J., Zhang, Y., Kuang, W., Peng, J., Chen, L. & Zeng, J. A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information. Nature Communications 8, (2017).
