@@ -167,9 +167,8 @@ The attention layer did not show major improvements. The obtained results are sh
 | FM with GCN and attetion layer |   0.6509  |0.5259|
 
 
-![W B Chart 3_3_2022, 21_17_57](https://user-images.githubusercontent.com/93614965/156646744-8e1589e6-9d34-46b5-9918-262d7b7992a9.png)
+![image](https://user-images.githubusercontent.com/93614965/156647510-8e419cfe-16e2-447e-b1f5-3ee842114bd2.png)
 
-![W B Chart 3_3_2022, 21_19_57](https://user-images.githubusercontent.com/93614965/156646760-84e22262-16d8-4cc3-8193-56626d9107d3.png)
 
 
 
