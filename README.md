@@ -87,6 +87,11 @@ data/directory contains the following datasets:
 - `mat_drug_protein.txt` 	: Drug_Protein interaction matrix (transpose of the above matrix)
 - `mat_drug_disease.txt` 	: Drug-Disease association matrix
 
+Then we have two dataframes for each interaction matrix, splitting into the corresponding trains and test datasets.
+
+- `df_train_variable1_variable2.csv` 
+- `df_test_variable1_variable2.csv` 
+- 
 # Recommender system models:
 
 https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
