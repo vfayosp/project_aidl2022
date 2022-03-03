@@ -161,6 +161,7 @@ The attention layer did not show major improvements. The obtained results are sh
 
 
 |          Model         | HR  | NDGC |
+|:------------------------:|:-------:|:--------:|
 |    FM    |  0.2264 |0.2105|
 |    FM with GCN           |   0.6792  |0.5258|
 | FM with GCN and attetion layer |   0.6509  |0.5259|
