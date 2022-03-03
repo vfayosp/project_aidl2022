@@ -77,12 +77,12 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 Example:
 
- · Optimizers: ADAM, SGD (momentum=0.9, nesterov=True)
+ · Optimizers
  · Learning rate = 1e-3
  · Batch size = 64			
- · Number of hidden layers = 1024
- · Dropout = 0.5
  · Number of epochs = 22
+ . TopK
+ . 
 
 ## Experiment setup
 
