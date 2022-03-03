@@ -44,13 +44,15 @@ class Dataset(torch.utils.data.Dataset):
         self.data = self.data.to_numpy()
         self.test_data = self.test_data.to_numpy()
 
-        self.nitems = self.test_data.shape[0]
+        self.nitems = np.concatenate((self.data, self.test_data))
+        self.nitems = np.max(self.nitems, axis = 0)
+        self.nitems = self.nitems[0]
 
         self.items = self.preprocess_items(self.data)
         self.targets = self.data[:, 2]
 
         self.field_dims = np.max(self.items, axis=0) + 1
-        self.train_mat = build_adj_mx(self.field_dims[-1], self.items.copy())
+        self.train_mat = build_adj_mx(np.max(self.field_dims), self.items.copy())
 
         self.negative_sampling(num_negatives=num_negatives_train)
 
