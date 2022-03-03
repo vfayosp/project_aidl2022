@@ -83,11 +83,9 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 data/directory contains the following datasets:
 
-mat_protein_protein.txt : Protein-Protein interaction matrix
-mat_protein_drug.txt : Protein-Drug interaction matrix
-mat_drug_protein.txt : Drug_Protein interaction matrix (transpose of the above matrix)
-mat_drug_disease.txt : Drug-Disease association matrix
-
+- `mat_protein_drug.txt` 	: Protein-Drug interaction matrix
+- `mat_drug_protein.txt` 	: Drug_Protein interaction matrix (transpose of the above matrix)
+- `mat_drug_disease.txt` 	: Drug-Disease association matrix
 
 # Recommender system models:
 
