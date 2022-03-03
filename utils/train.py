@@ -2,7 +2,7 @@ import torch
 import torch.utils.data
 import wandb
 from statistics import mean
-from utils import getHitRatio, getNDCG, save_model
+from utils.side import getHitRatio, getNDCG, save_model
 
 
 def train_one_epoch(model, optimizer, data_loader, criterion, device):

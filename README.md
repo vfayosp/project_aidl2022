@@ -1,5 +1,44 @@
 ejemplo: https://github.com/S-parera/RL-chess_aidl/blob/main/README.md
 
+# Getting started
+## Prerequisites
+To install and run de project the use Miniconda 3 is advised: 
+````
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+````
+After the install of Miniconda the setting of a new environment is adviced also:
+````
+conda create --name project python=3.9
+conda activate project
+````
+A requeriments file is also provided in order to set up all the necesary packages to run the main program:
+````
+pip install -r requirements.txt
+````
+
+## Installation
+In order to launch the program it is only needed to clone the git repo:
+````
+git clone https://github.com/vfayosp/project_aidl2022.git
+````
+
+## Project struture
+The project follows this structure:
+````
+.
+├── data                             # data used for training
+    ├── ...
+    ├── df_train_drug.disease.csv    # sample data used for train
+    ├── df_test_drug.disease.csv     # sample data used for test
+    └── ...
+├── trained_models                   # Trained models ready to predict
+├── utils                            # Auxiliar functions used by the main
+├── main.py                          # Main program
+├── requeriments.txt                 # Requirements file
+├── LICENSE
+└── README.md
+````
 # Drug recommender system 
 Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
 

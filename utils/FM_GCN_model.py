@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from FM_model import FeaturesLinear, FM_operation
+from utils.FM_model import FeaturesLinear, FM_operation
 import torch.utils.data
 from torch_geometric.nn import (
     GCNConv,
