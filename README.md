@@ -52,8 +52,8 @@ The project follows this structure:
 .
 ├── data                             # data used for training
     ├── ...
-    ├── df_train_drug.disease.csv    # sample data used for train
-    ├── df_test_drug.disease.csv     # sample data used for test
+    ├── df_train_drug_disease.csv    # sample data used for train
+    ├── df_test_drug_disease.csv     # sample data used for test
     └── ...
 ├── trained_models                   # Trained models ready to predict
 ├── utils                            # Auxiliar functions used by the main
