@@ -1,5 +1,28 @@
-ejemplo: https://github.com/S-parera/RL-chess_aidl/blob/main/README.md
-
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Project structure](#project-structure)
+- [Drug recommender system](#drug-recommender-system)
+    - [Team members:](#team-members)
+    - [Advisor:](#advisor)
+    - [Framework:](#framework)
+- [Introduction and motivation](#introduction-and-motivation)
+  - [Recommender systems:](#recommender-systems)
+  - [Drug discovery](#drug-discovery)
+  - [Drug repurposing](#drug-repurposing)
+- [Project Goals](#project-goals)
+  - [Environment setup](#environment-setup)
+- [Datasets](#datasets)
+- [Recommender system models:](#recommender-system-models)
+  - [Factorization machines](#factorization-machines)
+  - [Factorization machines with GCN](#factorization-machines-with-gcn)
+  - [Factorization machines with GCN (with an attention layer)](#factorization-machines-with-gcn-with-an-attention-layer)
+- [Metrics, evaluations](#metrics-evaluations)
+- [Experiment setup, model approaches and results.](#experiment-setup-model-approaches-and-results)
+  - [Protein-drug](#protein-drug)
+- [Results](#results)
 # Getting started
 ## Prerequisites
 To install and run de project the use Miniconda 3 is advised: 
@@ -23,14 +46,14 @@ In order to launch the program it is only needed to clone the git repo:
 git clone https://github.com/vfayosp/project_aidl2022.git
 ````
 
-## Project struture
+## Project structure
 The project follows this structure:
 ````
 .
 ├── data                             # data used for training
     ├── ...
-    ├── df_train_drug.disease.csv    # sample data used for train
-    ├── df_test_drug.disease.csv     # sample data used for test
+    ├── df_train_drug_disease.csv    # sample data used for train
+    ├── df_test_drug_disease.csv     # sample data used for test
     └── ...
 ├── trained_models                   # Trained models ready to predict
 ├── utils                            # Auxiliar functions used by the main
