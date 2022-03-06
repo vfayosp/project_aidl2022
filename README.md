@@ -165,7 +165,7 @@ The data was manipulated by the following notebooks:
 
 data/directory contains the following directories:
 
-- original_data: where the uncleaned data is stored with the following datasets: 
+- **original_data**: where the uncleaned data is stored with the following datasets: 
  
     - mat_drug_protein.txt 	  : Drug_Protein interaction matrix 
     - mat_protein_disease.txt : Protein_Drug interaction matrix 
@@ -174,13 +174,13 @@ data/directory contains the following directories:
     - disease.txt             : Disease names
     - protein.txt             : Protein names
     
-- cleaned_data: where the cleaned is stored and contains the following datasets (computed using 1 - Data explotation and cleaning):
+- **cleaned_data**: where the cleaned is stored and contains the following datasets (computed using 1 - Data explotation and cleaning):
 
     - df_drug_protein.csv     
     - df_protein_disease.csv
     - df_drug_disease.csv
     
-- prepared_data: where train and test are already divided for each dataset (computed using 2 - Data Preparation for each model) :
+- **prepared_data**: where train and test are already divided for each dataset (computed using 2 - Data Preparation for each model) :
 
     - df_train_drug_protein.csv
     - df_test_drug_protein.csv
