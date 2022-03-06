@@ -21,25 +21,26 @@ parser.add_argument(
     "--model", help="choose model(FM;FM_GCN;FM_GCNwAT)", type=str, default="FM"
 )
 parser.add_argument(
+    "--dataset",
+    help="dataset to use(drug_disease or protein_drug)",
+    type=str,
+    default="drug_disease",
+)
+parser.add_argument("--epochs", help="number of epochs to train", type=int, default=150)
+parser.add_argument(
+    "--embed_dims", help="amount of embedding dimensions", type=int, default=32
+)
+parser.add_argument("--batch_size", help="batch size", type=int, default=256)
+parser.add_argument("--lr", help="learning rate", type=float, default=0.01)
+parser.add_argument("--topk", help="topk values to retrieve", type=int, default=10)
+parser.add_argument("--heads", help="heads to be used when using attention layers", type=int, default=8)
+parser.add_argument(
     "--log_dir", help="tensorboard log directory", type=str, default="runs"
 )
 parser.add_argument("--wandb_run", help="WandB run name", type=str, default="runs")
 parser.add_argument(
     "--wandb_project", help="WandB project", type=str, default="project"
 )
-parser.add_argument("--topk", help="topk values to retrieve", type=int, default=10)
-parser.add_argument(
-    "--dataset",
-    help="dataset to use(drug_disease or protein_drug)",
-    type=str,
-    default="drug_disease",
-)
-parser.add_argument(
-    "--embed_dims", help="amount of embedding dimensions", type=int, default=32
-)
-parser.add_argument("--epochs", help="number of epochs to train", type=int, default=150)
-parser.add_argument("--batch_size", help="batch size", type=int, default=256)
-parser.add_argument("--lr", help="learning rate", type=float, default=0.01)
 args = parser.parse_args()
 
 if not torch.cuda.is_available():
@@ -70,6 +71,7 @@ elif args.model in ["FM_GCN", "FM_GCNwAT"]:
         args.embed_dims,
         X.to(device),
         edge_idx.to(device),
+        heads= args.heads,
         attention=args.model == "FM_GCNwAT",
     ).to(device)
 else:

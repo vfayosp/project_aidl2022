@@ -20,14 +20,14 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
 
 
 class GraphModel(torch.nn.Module):
-    def __init__(self, field_dims, embed_dim, features, train_mat, attention=False):
+    def __init__(self, field_dims, embed_dim, features, train_mat, heads_to_use=8, attention=False):
 
         super().__init__()
 
         self.A = train_mat
         self.features = features
         if attention:
-            self.GCN_module = GATConv(int(field_dims), embed_dim, heads=8, dropout=0.6)
+            self.GCN_module = GATConv(int(field_dims), embed_dim, heads=heads_to_use, dropout=0.6)
         else:
             self.GCN_module = GCNConv(field_dims, embed_dim)
 
@@ -46,11 +46,11 @@ class FactorizationMachineModel_withGCN(torch.nn.Module):
         S Rendle, Factorization Machines, 2010.
     """
 
-    def __init__(self, field_dims, embed_dim, X, A, attention=False):
+    def __init__(self, field_dims, embed_dim, X, A, heads=8, attention=False):
         super().__init__()
 
         self.linear = FeaturesLinear(field_dims)
-        self.embedding = GraphModel(field_dims, embed_dim, X, A, attention=attention)
+        self.embedding = GraphModel(field_dims, embed_dim, X, A, heads_to_use=heads, attention=attention)
         self.fm = FM_operation(reduce_sum=True)
 
     def forward(self, interaction_pairs):
