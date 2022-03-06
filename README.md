@@ -226,6 +226,10 @@ Graph Convolutional Networks (GCN) allow to capture the correlation between node
 Factorization machines only incorporate secon-order interactions between features, so high-order interactions are not taken into account. FM can model all feature interaction with the same weight but not all interactions are useful and predictive. Therefore, an attention layer to learn the importance of different feature interactions is included [4]
   
  Attention-based layers permit different contribution from parts to be compressed in a single representation.
+ 
+## Context
+
+In the models explained above the data used consist only on the interactions between items, to those models it is usefull add context to the training. The context takes into account the features of each pair of items interaction. This provides to the model extra information that can be used to better recommend the items.
 
 # Metrics, evaluations
 
