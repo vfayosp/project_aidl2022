@@ -136,18 +136,18 @@ Making clinical tries easier is one of the main paths of improvement, since it r
   *   **Drug-disease recommender**: envisioned in the field of drug repurposing or drug reposisioning (exploring the use of drugs already in place to treat other diseases).
 
 ## Environment setup
+For running the following things shoul be described:
 
-Example:
-
+ . Criterion
  · Optimizers
- · Learning rate = 1e-3
- · Batch size = 64			
- · Number of epochs = 22
+ · Learning rate
+ · Batch size		
+ · Number of epochs
  . TopK
- . Embed dimms: 32
+ . Embed dimm
+ 
+For the implementation of our code we used Adam as optimizer, with a learning rate of 0.01. The batch size used was 256, Embeding dimension was set to 64, we trained for 150 epochs using 10 as topk. As criterion we used BCEWithLogitsLoss(reduction='mean').
 
-
-**To be explained**
 
 # Data
 
