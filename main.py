@@ -21,6 +21,9 @@ parser.add_argument(
     "--model", help="choose model(FM;FM_GCN;FM_GCNwAT)", type=str, default="FM"
 )
 parser.add_argument(
+    "--data_folder", help="data folder", type=str, default="data"
+)
+parser.add_argument(
     "--dataset",
     help="dataset to use(drug_disease or protein_drug)",
     type=str,
@@ -51,7 +54,7 @@ logs_base_dir = args.log_dir
 os.makedirs(logs_base_dir, exist_ok=True)
 wandb.init(project=args.wandb_project)
 wandb.run.name = args.wandb_run
-dataset = Dataset(type_data=args.dataset)
+dataset = Dataset(type_data=args.dataset, data_path=args.data_folder)
 
 criterion = torch.nn.BCEWithLogitsLoss(reduction="mean")
 
