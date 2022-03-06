@@ -191,7 +191,7 @@ data/directory contains the following directories:
     - df_train_protein_drug.csv
     - df_test_protein_drug.csv
     
-- prepared_data_context: where train and test are already divided for each dataset in order to use them for the computation with context (computed using 3 - Data Preparation for the model with context):
+- **prepared_data_context**: where train and test are already divided for each dataset in order to use them for the computation with context (computed using 3 - Data Preparation for the model with context):
 
     - df_train_drug_protein2.csv
     - df_test_drug_protein2.csv
