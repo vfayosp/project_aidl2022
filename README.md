@@ -222,7 +222,9 @@ The cumulative gain is sthe sum of gains up to the K position in the recommendat
 
 ![image](https://user-images.githubusercontent.com/93614965/156443858-3d50d206-c5f9-4b76-b6b7-a5c30bd22243.png)
 
-IDCG(k)=\sum_{i=1}^{|I(k)|}\frac{G_i}{log_2(i+1}}
+$$IDCG(k)=\sum_{i=1}^{|I(k)|}\frac{G_i}{log_2(i+1}}$$
+
+![Figure](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;IDCG(k)=\sum_{i=1}^{|I(k)|}\frac{G_i}{log_2(i+1}})
 Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
 
 ![image](https://user-images.githubusercontent.com/93614965/156443885-32be2840-b528-49a2-b5c1-f88740ffb243.png)
