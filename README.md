@@ -220,7 +220,7 @@ In the models explained above the data used consist only on the interactions bet
 The cumulative gain is sthe sum of gains up to the K position in the recommendation list but does not take into account the order. To penalize the gain by its rank, the DCG is introduced, being IDCG the score for the most ideal ranking.
 
 ![image](https://user-images.githubusercontent.com/93614965/156443858-3d50d206-c5f9-4b76-b6b7-a5c30bd22243.png)
-
+![\Large IDCG(k)=\sum_{i=1}^{|I(k)|}\frac{G_i}{log_2(i+1}]
 Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
 
 ![image](https://user-images.githubusercontent.com/93614965/156443885-32be2840-b528-49a2-b5c1-f88740ffb243.png)
