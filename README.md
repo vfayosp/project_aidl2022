@@ -227,7 +227,7 @@ The cumulative gain is sthe sum of gains up to the K position in the recommendat
 
 Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
 
-![Figure](https://latex.codecogs.com/png.image?NDCG(k)=\frac{DCG(k)}{IDCG(k)})
+![Figure2](https://latex.codecogs.com/png.image?NDCG(k)=\frac{DCG(k)}{IDCG(k)})
 
 
 # Experiment setup, model approaches and results.
