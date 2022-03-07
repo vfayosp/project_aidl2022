@@ -50,11 +50,22 @@ git clone https://github.com/vfayosp/project_aidl2022.git
 The project follows this structure:
 ````
 .
-├── data                             # data used for training
-    ├── ...
-    ├── df_train_drug_disease.csv    # sample data used for train
-    ├── df_test_drug_disease.csv     # sample data used for test
-    └── ...
+├── data                             
+    ├── cleaned_data
+        ├── df_drug_disease.csv          # data without repetitions
+        └── ...
+    ├── original_data
+        ├── disease.txt                  # list of diseases
+        ├── mat_drug_disease.txt         # matrix of interactions
+        └── ...
+    ├── prepared_data
+        ├── df_train_drug_disease.csv    # sample data used for train
+        ├── df_test_drug_disease.csv     # sample data used for test
+        └── ...
+    ├── prepared_data_context
+        ├── df_train_drug_disease2.csv    # sample data used for train with context
+        ├── df_test_drug_disease2.csv     # sample data used for test with context
+        └── ...
 ├── trained_models                   # Trained models ready to predict
 ├── utils                            # Auxiliar functions used by the main
 ├── main.py                          # Main program
@@ -157,9 +168,9 @@ The data was manipulated by the following notebooks:
 
 **1 - Data explotation and cleaning**: Some of the drugs, proteins and diseases were duplicated or triplicated so they were represented multiple times in the data. We kept just one instance of each if the rows or columns were identical and we deleted all the representtions if there was a slightly difference. The sparsity of our data was calculated there.
 
-**2 - Data Preparation for each model**: We obliged (separately) each dataset to each row to have at least two interactions and to each column to at least have one. We did that not just for the data we cleaned but also computing the transpose to drug_protein in order tdo have protein_drug. 
+**R script**: We obliged (separately) each dataset to each row to have at least two interactions and to each column to at least have one. We did that not just for the data we cleaned but also computing the transpose to drug_protein in order tdo have protein_drug. 
 
-**3 - Data Preparation for the model with context**: We obliged each dataset to each row to have at least two interactions and to each column to at least have one. It has been done in a way that the drugs, diseases and proteins kept are the same in all three dataframes.  Also, we divided the data in train and test by selecting randonly one of the interactions of each row and keeping it as test saving the others for train.
+**2 - Data Preparation for the model with context**: We obliged each dataset to each row to have at least two interactions and to each column to at least have one. It has been done in a way that the drugs, diseases and proteins kept are the same in all three dataframes.  Also, we divided the data in train and test by selecting randonly one of the interactions of each row and keeping it as test saving the others for train.
 
 Train and test dataframes have been generated with the *random split* approach [5]. This is based on selecting only one random item of each user for testing.
 Although this scheme has been changed to use the last interaction (from time point of view, leave one last item), our dataset and the approach of our analysis do not allow for a the temporal approach.
@@ -168,40 +179,10 @@ Although this scheme has been changed to use the last interaction (from time poi
 
 data/directory contains the following directories:
 
-- **original_data**: where the uncleaned data is stored with the following datasets: 
- 
-    - mat_drug_protein.txt 	  : Drug_Protein interaction matrix 
-    - mat_protein_disease.txt : Protein_Drug interaction matrix 
-    - mat_drug_disease.txt 	  : Drug-Disease association matrix
-    - drug.txt                : Drug names 
-    - disease.txt             : Disease names
-    - protein.txt             : Protein names
-    
-- **cleaned_data**: where the cleaned is stored and contains the following datasets (computed using 1 - Data explotation and cleaning):
-
-    - df_drug_protein.csv     
-    - df_protein_disease.csv
-    - df_drug_disease.csv
-    
-- **prepared_data**: where train and test are already divided for each dataset (computed using 2 - Data Preparation for each model) :
-
-    - df_train_drug_protein.csv
-    - df_test_drug_protein.csv
-    - df_train_protein_disease.csv
-    - df_test_protein_disease.csv
-    - df_train_drug_disease.csv
-    - df_test_drug_disease.csv
-    - df_train_protein_drug.csv
-    - df_test_protein_drug.csv
-    
-- **prepared_data_context**: where train and test are already divided for each dataset in order to use them for the computation with context (computed using 3 - Data Preparation for the model with context):
-
-    - df_train_drug_protein2.csv
-    - df_test_drug_protein2.csv
-    - df_train_protein_disease2.csv
-    - df_test_protein_disease2.csv
-    - df_train_drug_disease2.csv
-    - df_test_drug_disease2.csv
+- **original_data**: where the uncleaned data is stored with the following datasets    
+- **cleaned_data**: where the cleaned is stored and contains the following datasets (computed using 1 - Data explotation and cleaning)
+- **prepared_data**: where train and test are already divided for each dataset (computed using the R script) 
+- **prepared_data_context**: where train and test are already divided for each dataset in order to use them for the computation with context (computed using 2 - Data Preparation for the model with context)
 
 # Recommender system models:
 
