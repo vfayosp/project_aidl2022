@@ -314,7 +314,7 @@ The model and aprroach explained above was replicated for the drug-disease recom
  * Finally, as explain above, we see that the implementation of deep neural networks such as this project may help significantly in several steps of the drug discovery process not only reducing costs and timelines but decreasing the % of candidate drugs that are finally dismissed after such a long timeline and efforts.
 
   
-Citation
+# References
 
 [1] https://www.researchgate.net/figure/Schematic-representation-of-the-drug-discovery-process-The-two-main-phases-discovery_fig2_335215729
 
