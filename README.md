@@ -251,12 +251,16 @@ The models explained above where applied to the Protein-Drug dataset to buld up 
 
 The attention layer did not show major improvements. The obtained results are showed below:
 
+<div align="center">
+
 |               Model               |   HR   |  NDGC  |
 | :-------------------------------: | :----: | :----: |
 |               FM@10               | 0.2264 | 0.2105 |
 |          FM with GCN@10           | 0.6792 | 0.5258 |
 | FM with GCN and attetion layer@10 | 0.6509 | 0.5259 |
 
+</div>
+<div>
 ![image](https://user-images.githubusercontent.com/93614965/156647510-8e419cfe-16e2-447e-b1f5-3ee842114bd2.png)
 
 # Results
