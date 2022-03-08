@@ -265,7 +265,7 @@ The models explained above where applied to the Protein-Drug dataset to buld up 
 - Second approach: Factorization machines computing embedings with GCN, to take advantage of the interaction between nodes.
 - Finally, in order to capture interaction higher than second order, the attention layer was applied.
 
-The attention layer did not show major improvements. The obtained results are showed below:
+The obtained results are showed below:
 
 <div align="center">
 
@@ -277,16 +277,17 @@ The attention layer did not show major improvements. The obtained results are sh
 
 </div>
 <div>
-
+ 
+The attention layer did not show major improvements.   
   Here there can be observed how the model performed during trainining and evaluation.
 
 ![image](https://user-images.githubusercontent.com/93614965/157316635-384a6666-b89d-4534-889c-db60fc81a003.png)
+  
+ As it can be observed above, the Factorization Machines model, which corresponds to the baseline model in Recommender system showed the lower performance but improved significantly when including the Graph Convolutional networks to capture the embedding, taking advantage of the fact that the structure of the data in this case allows to improve when capturing interactions between nodes. With regards to the attention layer, it has not improved the metrics.
 
 ## Drug disease
   
 The model and aprroach explained above was replicated for the drug-disease recommender. 
-  
-  
   
 <div align="center">
 
@@ -302,8 +303,8 @@ The model and aprroach explained above was replicated for the drug-disease recom
  Here there can be observed how the model performed during trainining and evaluation.
   
  ![image](https://user-images.githubusercontent.com/93614965/157317303-c9c03be7-a87a-4b27-8af3-d79e1db43146.png)
-
-
+  
+ Here we can also see that applying GCN our model improved considerably. But, in contrasts with the previous model, in this case, adding attention did outperformed, even if just a little, just the FM with GCN. The structure of our data here helped giving attention to the nodes that were closer. 
   
 # Results
 
