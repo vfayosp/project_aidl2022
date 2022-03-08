@@ -157,17 +157,20 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 ## Environment setup
 
-For running the following things shoul be described:
+For the development of the project the following parameters were used:
 
-. Criterion
-· Optimizers
-· Learning rate
-· Batch size
-· Number of epochs
-. TopK
-. Embed dimm
+|        Hyperparameters         | Factorization machines | FM with GCN | FM with GCN and attention |
+| :----------------------------: | :--------------------: | :---------: | :-----------------------: |
+|             Epochs             |          150           |     150     |            150            |
+| Learning Rate (Adam Optimizer) |          0.01          |    0.01     |           0.01            |
+|              Topk              |           10           |     10      |            10             |
+|      Embedding Dimensions      |           32           |     32      |            32             |
+|           Batch Size           |          256           |     256     |            256            |
+|             Heads              |           NA           |     NA      |             8             |
 
-For the implementation of our code we used Adam as optimizer, with a learning rate of 0.01. The batch size used was 256, Embeding dimension was set to 64, we trained for 150 epochs using 10 as topk. As criterion we used BCEWithLogitsLoss(reduction='mean').
+As it is showed, they remained constant for the training of the models. Just to keep them comparable.
+
+As criterion we used BCEWithLogitsLoss(reduction='mean').
 
 # Data
 
