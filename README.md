@@ -307,15 +307,15 @@ The model and aprroach explained above was replicated for the drug-disease recom
  Here we can also see that applying GCN our model improved considerably. But, in contrasts with the previous model, in this case, adding attention did outperformed, even if just a little, just the FM with GCN. The structure of our data here helped giving attention to the nodes that were closer. 
   
 
-  ### Comparison agains previous research:
+  ### Comparison againts previous research:
   
   We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
  <div align="center"> 
   
-                 |  Drug disease  | withou context  |  Drug-disease  | Protein intersection| 
-  Model               |   HR@10   |  NDGC@10  |    HR@10   |  NDGC@10  |
-| :-------------------------------: | :----: | :----: |  :----: | :----: |
+   |           -   |  Drug disease  | withou context  |  Drug-disease  | Protein intersection| 
+   | :-------------------------------: | :----: | :----: |  :----: | :----: |
+|  Model               |   HR@10   |  NDGC@10  |    HR@10   |  NDGC@10  |
 |               FM               | 0.0945 | 0.0489 |0.307 | 0.196 |
 |          FM with GCN           | 0.1963 | 0.1272 |0.345 | 0.225 |
 | FM with GCN and attetion layer | 0.2092 | 0.1357 |0.356 | 0.227 |
