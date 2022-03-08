@@ -4,6 +4,7 @@
 - [Getting started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Usage](#usage)
   - [Project structure](#project-structure)
 - [Drug recommender system](#drug-recommender-system)
     - [Team members:](#team-members)
@@ -59,6 +60,16 @@ In order to launch the program it is only needed to clone the git repo:
 ```
 git clone https://github.com/vfayosp/project_aidl2022.git
 ```
+
+## Usage
+
+Our main file is provided with data so you can try to train the model by yourselves. To run the code you just need to type:
+
+```
+python main.py
+```
+
+The program is also capable of parse
 
 ## Project structure
 
@@ -159,6 +170,8 @@ Making clinical tries easier is one of the main paths of improvement, since it r
 
 For the development of the project the following parameters were used:
 
+<div align="center">
+
 |        Hyperparameters         | Factorization machines | FM with GCN | FM with GCN and attention |
 | :----------------------------: | :--------------------: | :---------: | :-----------------------: |
 |             Epochs             |          150           |     150     |            150            |
@@ -167,6 +180,9 @@ For the development of the project the following parameters were used:
 |      Embedding Dimensions      |           32           |     32      |            32             |
 |           Batch Size           |          256           |     256     |            256            |
 |             Heads              |           NA           |     NA      |             8             |
+
+</div>
+<div>
 
 As it is showed, they remained constant for the training of the models. Just to keep them comparable.
 
