@@ -261,6 +261,7 @@ The attention layer did not show major improvements. The obtained results are sh
 
 </div>
 <div>
+
 ![image](https://user-images.githubusercontent.com/93614965/156647510-8e419cfe-16e2-447e-b1f5-3ee842114bd2.png)
 
 # Results
