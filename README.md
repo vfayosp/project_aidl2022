@@ -69,7 +69,27 @@ Our main file is provided with data so you can try to train the model by yoursel
 python main.py
 ```
 
-The program is also capable of parse
+The program is also capable of parse optional arguments:
+
+<div align="center">
+
+| Parameter       |   Default    |              Options               | Description                                                         |
+| :-------------- | :----------: | :--------------------------------: | :------------------------------------------------------------------ |
+| --model         |      FM      |       FM, FM_GCN, FM_GCNwAT        | Select the model to train with                                      |
+| --dataset       | drug_disease | drug_disease, protein_disease, any | Dataset to perform the training and evaluation                      |
+| --data_folder   |     data     |                Any                 | Path where to find the dataset                                      |
+| --epochs        |     150      |                Any                 | Number of epochs to train                                           |
+| --embed_dims    |      32      |                Any                 | Number of dimensions that the embedding will have                   |
+| --batch_size    |     256      |                Any                 | Select the batch size                                               |
+| --lr            |     0.01     |                Any                 | Select the learning rate                                            |
+| --topk          |      10      |                Any                 | Select the k value to evaluate the different metrics of the model   |
+| --heads         |      8       |                Any                 | Select the number of heads that the GAT will use                    |
+| --log_dir       |     runs     |                Any                 | Path to the directory that will be storing the logs for TensorBoard |
+| --wandb_project |   project    |                Any                 | Name of the project that will be used to store the runs in WandB    |
+| --wandb_run     |     runs     |                Any                 | Name of the run that will be used in WandB                          |
+
+</div>
+<div>
 
 ## Project structure
 
