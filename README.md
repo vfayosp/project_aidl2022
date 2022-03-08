@@ -7,11 +7,11 @@
   - [Usage](#usage)
   - [Project structure](#project-structure)
 - [Drug recommender system](#drug-recommender-system)
-    - [Team members:](#team-members)
-    - [Advisor:](#advisor)
-    - [Framework:](#framework)
+    - [Team members](#team-members)
+    - [Advisor](#advisor)
+    - [Framework](#framework)
 - [Introduction and motivation](#introduction-and-motivation)
-  - [Recommender systems:](#recommender-systems)
+  - [Recommender systems](#recommender-systems)
   - [Drug discovery](#drug-discovery)
   - [Drug repurposing](#drug-repurposing)
 - [Project Goals](#project-goals)
@@ -19,16 +19,16 @@
 - [Data](#data)
   - [Data manipulation](#data-manipulation)
   - [Datasets](#datasets)
-- [Recommender system models:](#recommender-system-models)
+- [Recommender system models](#recommender-system-models)
   - [Factorization machines](#factorization-machines)
   - [Factorization machines with GCN](#factorization-machines-with-gcn)
   - [Factorization machines with GCN (with an attention layer)](#factorization-machines-with-gcn-with-an-attention-layer)
   - [Context](#context)
 - [Metrics, evaluations](#metrics-evaluations)
-- [Results.](#results)
+- [Results](#results)
   - [Protein-drug](#protein-drug)
   - [Drug disease](#drug-disease)
-    - [Comparison against previous research:](#comparison-against-previous-research)
+    - [Comparison against previous research](#comparison-against-previous-research)
 - [Conclusions](#conclusions)
 - [References](#references)
 
@@ -139,21 +139,21 @@ The project follows this structure:
 
 Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
 
-### Team members:
+### Team members
 
 Victor Fayos, Jose Mérida, Lucía Pau, Alba Puy
 
-### Advisor:
+### Advisor
 
 Paula Gomez
 
-### Framework:
+### Framework
 
 Pytorch
 
 # Introduction and motivation
 
-## Recommender systems:
+## Recommender systems
 
 A recommendation system is a information filtering system that helps to predict the "preference" between and user and an item. This is used in a wide variety of areas mainly including music, films, books and products.
 
@@ -251,7 +251,7 @@ data/directory contains the following directories:
 - **prepared_data**: where train and test are already divided for each dataset (computed using the R script)
 - **prepared_data_context**: where train and test are already divided for each dataset in order to use them for the computation with context (computed using 2 - Data Preparation for the model with context)
 
-# Recommender system models:
+# Recommender system models
 
 ## Factorization machines
 
@@ -301,7 +301,7 @@ Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1
   <img src="https://latex.codecogs.com/png.image?NDCG(k)=\frac{DCG(k)}{IDCG(k)}" alt="NDCG"/>
 </p>
 
-# Results.
+# Results
 
 ## Protein-drug
 
@@ -356,7 +356,7 @@ Here there can be observed how the model performed during training and evaluatio
 
 Here we can also see that applying GCN our model improved considerably. But, in contrasts with the previous model, in this case, adding attention did outperformed, even if just a little, just the FM with GCN. The structure of our data here helped giving attention to the nodes that were closer.
 
-### Comparison against previous research:
+### Comparison against previous research
 
 We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
