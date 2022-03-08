@@ -159,8 +159,8 @@ A recommendation system is a information filtering system that helps to predict 
 
 From an user-product point of view (which is the widely used approach) , recommender system are usually based on :
 
-- **Collaborative** filtering: Builds a model based on user behavior and interactions as well as similar decisions of other users.
-- **Content-based** filtering: Uses the characteristics of the item itself to find similar properties between items and recommender them.
+- **Collaborative filtering**: Builds a model based on user behavior and interactions as well as similar decisions of other users.
+- **Content-based filtering**: Uses the characteristics of the item itself to find similar properties between items and recommender them.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93614965/156049316-3cb3a26f-478c-4fbf-8247-96046d5d66cf.png" alt="Collaborative filtering"/>
