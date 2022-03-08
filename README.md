@@ -269,17 +269,42 @@ The attention layer did not show major improvements. The obtained results are sh
 
 <div align="center">
 
-|               Model               |   HR   |  NDGC  |
+|               Model               |   HR@10   |  NDGC@10  |
 | :-------------------------------: | :----: | :----: |
-|               FM@10               | 0.2264 | 0.2105 |
-|          FM with GCN@10           | 0.6792 | 0.5258 |
-| FM with GCN and attetion layer@10 | 0.6509 | 0.5259 |
+|               FM               | 0.2264 | 0.2105 |
+|          FM with GCN           | 0.6792 | 0.5258 |
+| FM with GCN and attetion layer | 0.6509 | 0.5259 |
 
 </div>
 <div>
 
-![image](https://user-images.githubusercontent.com/93614965/156647510-8e419cfe-16e2-447e-b1f5-3ee842114bd2.png)
+  Here there can be observed how the model performed during trainining and evaluation.
 
+![image](https://user-images.githubusercontent.com/93614965/157316635-384a6666-b89d-4534-889c-db60fc81a003.png)
+
+## Drug disease
+  
+The model and aprroach explained above was replicated for the drug-disease recommender. 
+  
+  
+  
+<div align="center">
+
+|               Model               |   HR@10   |  NDGC@10  |
+| :-------------------------------: | :----: | :----: |
+|               FM               | 0.0945 | 0.0489 |
+|          FM with GCN           | 0.1963 | 0.1272 |
+| FM with GCN and attetion layer | 0.2092 | 0.1357 |
+
+</div>
+<div>
+
+ Here there can be observed how the model performed during trainining and evaluation.
+  
+ ![image](https://user-images.githubusercontent.com/93614965/157317303-c9c03be7-a87a-4b27-8af3-d79e1db43146.png)
+
+
+  
 # Results
 
 Citation
