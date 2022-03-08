@@ -141,7 +141,7 @@ Final project for the postgraduate degree in Artificial Intelligence with Deep L
 
 ### Team members
 
-Victor Fayos, Jose Mérida, Lucía Pau, Alba Puy
+Victor Fayos, José Mérida, Lucía Pau, Alba Puy
 
 ### Advisor
 
