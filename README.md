@@ -255,7 +255,7 @@ Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1
   <img src="https://latex.codecogs.com/png.image?NDCG(k)=\frac{DCG(k)}{IDCG(k)}" alt="NDCG"/>
 </p>
 
-# Experiment setup, model approaches and results.
+# Results.
 
 ## Protein-drug
 
@@ -306,8 +306,14 @@ The model and aprroach explained above was replicated for the drug-disease recom
   
  Here we can also see that applying GCN our model improved considerably. But, in contrasts with the previous model, in this case, adding attention did outperformed, even if just a little, just the FM with GCN. The structure of our data here helped giving attention to the nodes that were closer. 
   
-# Results
+# Conclusions
 
+ * Our main lesson from this project is that knowing not only what is the data but the structure it has can help you a lot in the decision of which model is better to implement. 
+ * In our case using a graph convolutional network improved the performance and it was really interesting how this captured the embeddings.
+ * From our point of view, at least for our problem, using attention is not worth it because of the computational time and the amount of hyperparameters compared with the improvement observed.
+ * Finally, as explain above, we see that the implementation of deep neural networks such as this project may help significantly in several steps of the drug discovery process not only reducing costs and timelines but decreasing the % of candidate drugs that are finally dismissed after such a long timeline and efforts.
+
+  
 Citation
 
 [1] https://www.researchgate.net/figure/Schematic-representation-of-the-drug-discovery-process-The-two-main-phases-discovery_fig2_335215729
