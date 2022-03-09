@@ -360,55 +360,42 @@ Here we can also see that applying GCN our model improved considerably. But, in 
 
 We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
-<div align="center"> 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-dvid{background-color:#efefef;border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
-.tg .tg-6e8n{background-color:#c0c0c0;border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table class="tg">
+<div align="center"> <table>
 <thead>
   <tr>
-    <th class="tg-73oq"></th>
-    <th class="tg-6e8n" colspan="2">Drug disease without context</th>
-    <th class="tg-6e8n" colspan="2">Drug disease with protein inteserction</th>
+    <th></th>
+    <th colspan="2">Drug disease without context</th>
+    <th colspan="2">Drug disease with protein inteserction</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-dvid">Model</td>
-    <td class="tg-dvid">HR@10</td>
-    <td class="tg-dvid">NDGC@10</td>
-    <td class="tg-dvid">HR@10</td>
-    <td class="tg-dvid">NDGC@10</td>
+    <td>Model</td>
+    <td>HR@10</td>
+    <td>NDGC@10</td>
+    <td>HR@10</td>
+    <td>NDGC@10</td>
   </tr>
   <tr>
-    <td class="tg-fymr">FM</td>
-    <td class="tg-0pky">0.0945</td>
-    <td class="tg-0pky">0.0489</td>
-    <td class="tg-0pky">0.3070</td>
-    <td class="tg-0pky">0.1960</td>
+    <td>FM</td>
+    <td>0.0945</td>
+    <td>0.0489</td>
+    <td>0.3070</td>
+    <td>0.1960</td>
   </tr>
   <tr>
-    <td class="tg-fymr">FM with GCN</td>
-    <td class="tg-0pky">0.1963</td>
-    <td class="tg-0pky">0.1272</td>
-    <td class="tg-0pky">0.3450</td>
-    <td class="tg-0pky">0.2250</td>
+    <td>FM with GCN</td>
+    <td>0.1963</td>
+    <td>0.1272</td>
+    <td>0.3450</td>
+    <td>0.2250</td>
   </tr>
   <tr>
-    <td class="tg-fymr">FM with GAT</td>
-    <td class="tg-0pky">0.2092</td>
-    <td class="tg-0pky">0.1357</td>
-    <td class="tg-0pky">0.3560</td>
-    <td class="tg-0pky">0.2270</td>
+    <td>FM with GAT</td>
+    <td>0.2092</td>
+    <td>0.1357</td>
+    <td>0.3560</td>
+    <td>0.2270</td>
   </tr>
 </tbody>
 </table>
