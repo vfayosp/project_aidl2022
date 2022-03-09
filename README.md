@@ -361,6 +361,13 @@ Here we can also see that applying GCN our model improved considerably. But, in 
 We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
 <div align="center"> <table>
+<style>
+  table,
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+</style>
 <thead>
   <tr>
     <th></th>
