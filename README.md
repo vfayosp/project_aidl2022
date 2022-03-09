@@ -6,7 +6,7 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Project structure](#project-structure)
-- [Drug recommender system](#drug-recommender-system)
+- [Recommender systems in drug development](#recommender-systems-in-drug-development)
     - [Team members](#team-members)
     - [Advisor](#advisor)
     - [Framework](#framework)
@@ -135,7 +135,7 @@ The project follows this structure:
 └── README.md
 ```
 
-# Drug recommender system
+# Recommender systems in drug development
 
 Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
 
