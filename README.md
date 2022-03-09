@@ -361,13 +361,6 @@ Here we can also see that applying GCN our model improved considerably. But, in 
 We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
 <div align="center"> <table>
-<style type="text/css">
-  table,
-  td {
-    text-align: center;
-    vertical-align: middle;
-  }
-</style>
 <thead>
   <tr>
     <th></th>
@@ -377,32 +370,32 @@ We have compared our drug-disease results with previous research already done us
 </thead>
 <tbody>
   <tr>
-    <td>Model</td>
-    <td>HR@10</td>
-    <td>NDGC@10</td>
-    <td>HR@10</td>
-    <td>NDGC@10</td>
+    <td><center><b>Model</b></center></td>
+    <td><center><b>HR@10</b></center></td>
+    <td><center><b>NDGC@10</b></center></td>
+    <td><center><b>HR@10</b></center></td>
+    <td><center><b>NDGC@10</b></center></td>
   </tr>
   <tr>
-    <td>FM</td>
-    <td>0.0945</td>
-    <td>0.0489</td>
-    <td>0.3070</td>
-    <td>0.1960</td>
+    <td><center><b>FM</b></center></td>
+    <td><center>0.0945</center></td>
+    <td><center>0.0489</center></td>
+    <td><center>0.3070</center></td>
+    <td><center>0.1960</center></td>
   </tr>
   <tr>
-    <td>FM with GCN</td>
-    <td>0.1963</td>
-    <td>0.1272</td>
-    <td>0.3450</td>
-    <td>0.2250</td>
+    <td><center><b>FM with GCN</b></center></td>
+    <td><center>0.1963</center></td>
+    <td><center>0.1272</center></td>
+    <td><center>0.3450</center></td>
+    <td><center>0.2250</center></td>
   </tr>
   <tr>
-    <td>FM with GAT</td>
-    <td>0.2092</td>
-    <td>0.1357</td>
-    <td>0.3560</td>
-    <td>0.2270</td>
+    <td><center><b>FM with GAT</b></center></td>
+    <td><center>0.2092</center></td>
+    <td><center>0.1357</center></td>
+    <td><center>0.3560</center></td>
+    <td><center>0.2270</center></td>
   </tr>
 </tbody>
 </table>
