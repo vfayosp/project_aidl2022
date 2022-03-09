@@ -360,19 +360,63 @@ Here we can also see that applying GCN our model improved considerably. But, in 
 
 We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
- <div align="center"> 
-  
-|                 |   HR@10  |  NDGC@10  |    HR@10   |  NDGC@10  |
-| :-------------------------------: | :----: | :----: |  :----: | :----: |
-|      Model       |  Drug disease  | without context  |  Drug-disease  | Protein intersection|
-| FM | 0.0945 | 0.0489 |0.307 | 0.196 |
-| FM with GCN | 0.1963 | 0.1272 |0.345 | 0.225 |
-| FM with GCN and attention layer | 0.2092 | 0.1357 |0.356 | 0.227 |
-
+<div align="center"> 
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-dvid{background-color:#efefef;border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-6e8n{background-color:#c0c0c0;border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-73oq"></th>
+    <th class="tg-6e8n" colspan="2">Drug disease without context</th>
+    <th class="tg-6e8n" colspan="2">Drug disease with protein inteserction</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-dvid">Model</td>
+    <td class="tg-dvid">HR@10</td>
+    <td class="tg-dvid">NDGC@10</td>
+    <td class="tg-dvid">HR@10</td>
+    <td class="tg-dvid">NDGC@10</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">FM</td>
+    <td class="tg-0pky">0.0945</td>
+    <td class="tg-0pky">0.0489</td>
+    <td class="tg-0pky">0.3070</td>
+    <td class="tg-0pky">0.1960</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">FM with GCN</td>
+    <td class="tg-0pky">0.1963</td>
+    <td class="tg-0pky">0.1272</td>
+    <td class="tg-0pky">0.3450</td>
+    <td class="tg-0pky">0.2250</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr">FM with GAT</td>
+    <td class="tg-0pky">0.2092</td>
+    <td class="tg-0pky">0.1357</td>
+    <td class="tg-0pky">0.3560</td>
+    <td class="tg-0pky">0.2270</td>
+  </tr>
+</tbody>
+</table>
   </div>
 <div>
   
  The state of the art of recommender systems with this dataset showed major performance that ours. We attributed it mainly to the use of protein interactions as context, which was not implemented in ours. This confirmed that proteins pay an important role in drug development so taking advantage of their interactions with both drugs and diseases is necessary for research in this field.
+
 # Conclusions
 
 - Our main lesson from this project is that knowing not only what is the data, but the structure it has, can help you a lot in the decision of which model is better to implement.
