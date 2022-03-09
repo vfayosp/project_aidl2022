@@ -403,7 +403,7 @@ We have compared our drug-disease results with previous research already done [8
 - Our main lesson is that we see that the implementation of deep neural networks such as this project may help significantly in several steps of the drug discovery process not only reducing costs and timelines but decreasing the % of candidate drugs that are finally dismissed after such a long timeline and efforts.
 - In our case using a graph convolutional network improved the performance and it was really interesting how this captured the embeddings.
 - From our point of view, at least for our problem, using attention is not worth it because of the computational time and the amount of hyperparameter tunning involved compared with the improvement observed.
-- Finally, as explained above, we see that the implementation of deep neural networks such as this project may help significantly in several steps of the drug discovery process not only reducing costs and timelines but decreasing the % of candidate drugs that are finally dismissed after such a long timeline and efforts.
+- Finally, we learned that not only being aware of the contents of the data, but its topology, can help on the decision of choosing a model above another.
 
 # References
 
