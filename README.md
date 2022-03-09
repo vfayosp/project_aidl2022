@@ -1,15 +1,26 @@
-# Table of contents
+<font size="10"><h1 align = "center">Recommender systems in drug development</h1></font>
 
-- [Table of contents](#table-of-contents)
+Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
+
+<font size="4">**Team members:**</font>
+
+Victor Fayos, José Mérida, Lucía Pau, Alba Puy
+
+<font size="4">**Advisor:**</font>
+
+Paula Gomez
+
+<font size="4">**Framework:**</font>
+
+Pytorch
+
+<font size="6"><h1>Table of contents</h1></font>
+
 - [Getting started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Project structure](#project-structure)
-- [Recommender systems in drug development](#recommender-systems-in-drug-development)
-    - [Team members](#team-members)
-    - [Advisor](#advisor)
-    - [Framework](#framework)
 - [Introduction and motivation](#introduction-and-motivation)
   - [Recommender systems](#recommender-systems)
   - [Drug discovery](#drug-discovery)
@@ -135,22 +146,6 @@ The project follows this structure:
 └── README.md
 ```
 
-# Recommender systems in drug development
-
-Final project for the postgraduate degree in Artificial Intelligence with Deep Learning
-
-### Team members
-
-Victor Fayos, José Mérida, Lucía Pau, Alba Puy
-
-### Advisor
-
-Paula Gomez
-
-### Framework
-
-Pytorch
-
 # Introduction and motivation
 
 ## Recommender systems
@@ -267,9 +262,9 @@ In this project an implementation based on the publication by _Rendle, S_[4] wil
 
 ## Factorization machines with GCN
 
-Factorization machines assume that each sample is independent and cannot exploit interactions between samples, it is only focused on the features. However, in some applications the interaction between samples is also useful, as in recommendation systems.
+Factorization machines can only exploit second order interactions. However, in some applications higher order interactions between samples have the potential to increase the performance of the model, due to its inherent structure of the data.
 
-Graph Convolutional Networks (GCN) allow to capture the correlation between nodes by using a convolution operation. This is performed by aggregating information from the neighbors' information when making predictions so the interaction between nodes is also encoded.
+Graph Convolutional Networks (GCN) allow to capture the correlation between nodes by using a convolution operations. This is performed by aggregating information from the neighbors' information when making predictions so the interaction between nodes is also encoded.
 In this project an implementation based on the publication by _Welling et al._ [5] will be used.
 
 ## Factorization machines with GCN (with an attention layer)
@@ -288,14 +283,13 @@ In the models explained above the data used consist only on the interactions bet
 
 - **Hit ratio**: Is is simply the number of correct items that were present in the recommendation list (of length TopK). If the topk is increased the hit ratio increases, but it must be a reasonable value.
 - **NDCG** (Normalized Discounted Cumulative Gain) :
-
-The cumulative gain is the sum of gains up to the K position in the recommendation list but does not take into account the order. To penalize the gain by its rank, the DCG is introduced, being IDCG the score for the most ideal ranking.
+  The cumulative gain is the sum of gains up to the K position in the recommendation list but does not take into account the order. To penalize the gain by its rank, the DCG is introduced, being IDCG the score for the most ideal ranking.
 
 <p align="center">
   <img src="https://latex.codecogs.com/png.image?IDCG(k)=\sum_{i=1}^{|I(k)|}\frac{G_i}{log_2(i+1)}" alt="IDCG"/>
 </p>
 
-Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1.
 
 <p align="center">
   <img src="https://latex.codecogs.com/png.image?NDCG(k)=\frac{DCG(k)}{IDCG(k)}" alt="NDCG"/>
@@ -305,11 +299,11 @@ Then, the NDCG is the DCG normalized by the IDCG so the value is between 0 and 1
 
 ## Protein-drug
 
-The models explained above where applied to the Protein-Drug dataset to build up a recommender system able to recommend drugs starting from a target.
+The models explained above were applied to the Protein-Drug dataset to build up a recommender system able to recommend drugs starting from a target.
 
 - First approach: Factorization machines model computing embeddings just as a linear layer.
-- Second approach: Factorization machines computing embeddings with GCN, to take advantage of the interaction between nodes.
-- Finally, in order to capture interaction higher than second order, the attention layer was applied.
+- Second approach: Factorization machines computing embeddings with GCN, to take advantage of high order interactions between nodes.
+- Finally, in order to weight all the neighbors' interactions, the attention layer was applied.
 
 The obtained results are showed below:
 
@@ -331,7 +325,7 @@ Here there can be observed how the model performed during training and evaluatio
   <img src="https://user-images.githubusercontent.com/93614965/157316635-384a6666-b89d-4534-889c-db60fc81a003.png" alt="results"/>
 </p>
 
-As it can be observed above, the Factorization Machines model, which corresponds to the baseline model in Recommender system showed the lower performance but improved significantly when including the Graph Convolutional networks to capture the embedding, taking advantage of the fact that the structure of the data in this case allows to improve when capturing interactions between nodes. With regards to the attention layer, it has not improved the metrics.
+As it can be observed above, the Factorization Machines model, which corresponds to the baseline model in Recommender system showed the lower performance but improved significantly when including the Graph Convolutional network to capture the embedding, taking advantage of the fact that the structure of the data in this case allows to improve when capturing higher interactions between nodes. With regards to the attention layer, it has not improved the metrics, mainly because all the neighbors contributed similarly.
 
 ## Drug disease
 
@@ -354,18 +348,18 @@ Here there can be observed how the model performed during training and evaluatio
   <img src="https://user-images.githubusercontent.com/93614965/157317303-c9c03be7-a87a-4b27-8af3-d79e1db43146.png" alt="results"/>
 </p>
 
-Here we can also see that applying GCN our model improved considerably. But, in contrasts with the previous model, in this case, adding attention did outperformed, even if just a little, just the FM with GCN. The structure of our data here helped giving attention to the nodes that were closer.
+Here we can also see that applying GCN our model improved considerably. In this case, adding attention outperformed the other approaches, slightly improving the metrics. The structure of our data here helped giving weighted attention to the neighbor nodes.
 
 ### Comparison against previous research
 
-We have compared our drug-disease results with previous research already done using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
+We have compared our drug-disease results with previous research already done [8] using the same data input. Even the same data was used, we have to consider that different cleaning constraints may have been applied to the data, in terms of removing duplicates or requiring a minimum number of interactions by protein/drug, for each of the datasets.
 
 <div align="center"> <table>
 <thead>
   <tr>
     <th></th>
-    <th colspan="2">Drug disease without context</th>
-    <th colspan="2">Drug disease with protein intersection</th>
+    <th colspan="2" align="center">Drug disease without context</th>
+    <th colspan="2" align="center">Drug disease with protein intersection [8]</th>
   </tr>
 </thead>
 <tbody>
@@ -406,19 +400,18 @@ We have compared our drug-disease results with previous research already done us
 
 # Conclusions
 
-- Our main lesson from this project is that knowing not only what is the data, but the structure it has, can help you a lot in the decision of which model is better to implement.
+- Our main lesson is that we see that the implementation of deep neural networks such as this project may help significantly in several steps of the drug discovery process not only reducing costs and timelines but decreasing the % of candidate drugs that are finally dismissed after such a long timeline and efforts.
 - In our case using a graph convolutional network improved the performance and it was really interesting how this captured the embeddings.
 - From our point of view, at least for our problem, using attention is not worth it because of the computational time and the amount of hyperparameter tunning involved compared with the improvement observed.
 - Finally, as explained above, we see that the implementation of deep neural networks such as this project may help significantly in several steps of the drug discovery process not only reducing costs and timelines but decreasing the % of candidate drugs that are finally dismissed after such a long timeline and efforts.
 
 # References
 
-[1] https://www.researchgate.net/figure/Schematic-representation-of-the-drug-discovery-process-The-two-main-phases-discovery_fig2_335215729
+[1] Duelen, R., Corvelyn, M., Tortorella, I., Leonardi, L., Chai, Y. C., & Sampaolesi, M. (2019). Medicinal biotechnology for disease modeling, clinical therapy, and drug discovery and development. In Introduction to Biotech Entrepreneurship: From Idea to Business (pp. 89-128). Springer, Cham.
 
-[2] Exploring Data Splitting Strategies for the Evaluation
-of Recommendation Models
+[2] Meng, Z., McCreadie, R., Macdonald, C., & Ounis, I. (2020, September). Exploring data splitting strategies for the evaluation of recommendation models. In Fourteenth ACM conference on recommender systems (pp. 681-686).
 
-[3] https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
+[3] Loni, B., Larson, M., & Hanjalic, A. (2018). Factorization machines for data with implicit feedback. arXiv preprint arXiv:1812.08254.
 
 [4] Rendle, S. (2010). Factorization Machines.
 
@@ -429,12 +422,4 @@ Learning the Weight of Feature Interactions via Attention Networks
 
 [7] Veličković, P., Cucurull, G., Casanova, A., Romero, A., Liò, P., & Bengio, Y. (2017). Graph Attention Networks
 
-[??] DEEP RELATIONAL FACTORIZATION MACHINES
-
-[??] Luo, Y., Zhao, X., Zhou, J., Yang, J., Zhang, Y., Kuang, W., Peng, J., Chen, L. & Zeng, J. A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information. Nature Communications 8, (2017).
-
-[??] https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db#:~:text=Factorization%20Machines%20(FM)%20are%20generic,regression%2C%20classification%2C%20and%20ranking.
-
-[??] https://towardsdatascience.com/introduction-to-recommender-systems-2-deep-neural-network-based-recommendation-systems-4e4484e64746
-
-[??] https://stats.stackexchange.com/questions/108901/difference-between-factorization-machines-and-matrix-factorization
+[8] Duran, P. G., Karatzoglou, A., Vitrià, J., Xin, X., & Arapakis, I. (2021). Graph convolutional embeddings for recommender systems. IEEE Access, 9, 100173-100184.
