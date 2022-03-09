@@ -370,32 +370,32 @@ We have compared our drug-disease results with previous research already done us
 </thead>
 <tbody>
   <tr>
-    <td><center><b>Model</b></center></td>
-    <td><center><b>HR@10</b></center></td>
-    <td><center><b>NDGC@10</b></center></td>
-    <td><center><b>HR@10</b></center></td>
-    <td><center><b>NDGC@10</b></center></td>
+    <td align="center"><b>Model</b></td>
+    <td align="center"><b>HR@10</b></td>
+    <td align="center"><b>NDGC@10</b></td>
+    <td align="center"><b>HR@10</b></td>
+    <td align="center"><b>NDGC@10</b></td>
   </tr>
   <tr>
-    <td><center><b>FM</b></center></td>
-    <td><center>0.0945</center></td>
-    <td><center>0.0489</center></td>
-    <td><center>0.3070</center></td>
-    <td><center>0.1960</center></td>
+    <td align="center"><b>FM</b></td>
+    <td align="center">0.0945</td>
+    <td align="center">0.0489</td>
+    <td align="center">0.3070</td>
+    <td align="center">0.1960</td>
   </tr>
   <tr>
-    <td><center><b>FM with GCN</b></center></td>
-    <td><center>0.1963</center></td>
-    <td><center>0.1272</center></td>
-    <td><center>0.3450</center></td>
-    <td><center>0.2250</center></td>
+    <td align="center"><b>FM with GCN</b></td>
+    <td align="center">0.1963</td>
+    <td align="center">0.1272</td>
+    <td align="center">0.3450</td>
+    <td align="center">0.2250</td>
   </tr>
   <tr>
-    <td><center><b>FM with GAT</b></center></td>
-    <td><center>0.2092</center></td>
-    <td><center>0.1357</center></td>
-    <td><center>0.3560</center></td>
-    <td><center>0.2270</center></td>
+    <td align="center"><b>FM with GAT</b></td>
+    <td align="center">0.2092</td>
+    <td align="center">0.1357</td>
+    <td align="center">0.3560</td>
+    <td align="center">0.2270</td>
   </tr>
 </tbody>
 </table>
