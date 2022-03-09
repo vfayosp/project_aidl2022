@@ -365,7 +365,7 @@ We have compared our drug-disease results with previous research already done us
   <tr>
     <th></th>
     <th colspan="2">Drug disease without context</th>
-    <th colspan="2">Drug disease with protein inteserction</th>
+    <th colspan="2">Drug disease with protein intersection</th>
   </tr>
 </thead>
 <tbody>
